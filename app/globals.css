@@ -1,0 +1,555 @@
+/* Splunk Theme Variables */
+:root {
+  /* Enterprise Light Theme */
+  --splunk-enterprise-bg-primary: #ffffff;
+  --splunk-enterprise-bg-secondary: #f7f8fa;
+  --splunk-enterprise-bg-tertiary: #edf1f6;
+  --splunk-enterprise-text-primary: #2e2e2e;
+  --splunk-enterprise-text-secondary: #5a6b73;
+  --splunk-enterprise-border: #c3cbd4;
+  --splunk-enterprise-primary: #0070f3;
+  --splunk-enterprise-success: #00a86b;
+  --splunk-enterprise-warning: #ff8c00;
+  --splunk-enterprise-error: #d93f3f;
+}
+
+.splunk-theme-enterprise-dark {
+  /* Enterprise Dark Theme */
+  --splunk-enterprise-bg-primary: #0f1419;
+  --splunk-enterprise-bg-secondary: #1a1f26;
+  --splunk-enterprise-bg-tertiary: #252a33;
+  --splunk-enterprise-text-primary: #ffffff;
+  --splunk-enterprise-text-secondary: #a6b3c2;
+  --splunk-enterprise-border: #3d4450;
+  --splunk-enterprise-primary: #0070f3;
+  --splunk-enterprise-success: #00a86b;
+  --splunk-enterprise-warning: #ff8c00;
+  --splunk-enterprise-error: #d93f3f;
+}
+
+.splunk-theme-lite {
+  /* Lite Theme */
+  --splunk-enterprise-bg-primary: #ffffff;
+  --splunk-enterprise-bg-secondary: #f8f9fa;
+  --splunk-enterprise-bg-tertiary: #e9ecef;
+  --splunk-enterprise-text-primary: #212529;
+  --splunk-enterprise-text-secondary: #6c757d;
+  --splunk-enterprise-border: #dee2e6;
+  --splunk-enterprise-primary: #007bff;
+  --splunk-enterprise-success: #28a745;
+  --splunk-enterprise-warning: #ffc107;
+  --splunk-enterprise-error: #dc3545;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Splunk Platform Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--splunk-enterprise-bg-primary);
+  color: var(--splunk-enterprise-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* App Bar */
+.splunk-app-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--splunk-enterprise-bg-secondary);
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+  z-index: 1000;
+}
+
+.splunk-app-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.splunk-app-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.splunk-app-bar-brand {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--splunk-enterprise-text-primary);
+}
+
+.splunk-app-bar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.splunk-app-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Menu */
+.splunk-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.splunk-menu-item {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--splunk-enterprise-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.splunk-menu-item:hover {
+  background-color: var(--splunk-enterprise-bg-tertiary);
+  color: var(--splunk-enterprise-text-primary);
+}
+
+.splunk-menu-item.selected {
+  background-color: var(--splunk-enterprise-primary);
+  color: white;
+}
+
+/* Buttons */
+.splunk-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.splunk-button-primary {
+  background-color: var(--splunk-enterprise-primary);
+  color: white;
+}
+
+.splunk-button-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.splunk-button-secondary {
+  background-color: var(--splunk-enterprise-bg-tertiary);
+  color: var(--splunk-enterprise-text-primary);
+  border: 1px solid var(--splunk-enterprise-border);
+}
+
+.splunk-button-secondary:hover:not(:disabled) {
+  background-color: var(--splunk-enterprise-bg-secondary);
+}
+
+.splunk-button-destructive {
+  background-color: var(--splunk-enterprise-error);
+  color: white;
+}
+
+.splunk-button-destructive:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.splunk-button-pill {
+  border-radius: 20px;
+  background-color: var(--splunk-enterprise-bg-tertiary);
+  color: var(--splunk-enterprise-text-primary);
+  border: 1px solid var(--splunk-enterprise-border);
+}
+
+.splunk-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.splunk-card {
+  background-color: var(--splunk-enterprise-bg-primary);
+  border: 1px solid var(--splunk-enterprise-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.splunk-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+  background-color: var(--splunk-enterprise-bg-secondary);
+}
+
+.splunk-card-body {
+  padding: 24px;
+}
+
+/* Form Controls */
+.splunk-control-group {
+  margin-bottom: 20px;
+}
+
+.splunk-control-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--splunk-enterprise-text-primary);
+}
+
+.splunk-control-help {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--splunk-enterprise-text-secondary);
+}
+
+.splunk-text-input,
+.splunk-textarea,
+.splunk-date-picker {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--splunk-enterprise-border);
+  border-radius: 4px;
+  background-color: var(--splunk-enterprise-bg-primary);
+  color: var(--splunk-enterprise-text-primary);
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.splunk-text-input:focus,
+.splunk-textarea:focus,
+.splunk-date-picker:focus {
+  outline: none;
+  border-color: var(--splunk-enterprise-primary);
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+.splunk-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Tables */
+.splunk-table-container {
+  border: 1px solid var(--splunk-enterprise-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--splunk-enterprise-bg-primary);
+}
+
+.splunk-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.splunk-table-head {
+  background-color: var(--splunk-enterprise-bg-secondary);
+}
+
+.splunk-table-head-cell {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--splunk-enterprise-text-primary);
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+}
+
+.splunk-table-cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+  color: var(--splunk-enterprise-text-primary);
+}
+
+.splunk-table.stripe-rows .splunk-table-row:nth-child(even) {
+  background-color: var(--splunk-enterprise-bg-secondary);
+}
+
+/* Messages */
+.splunk-message {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border-left: 4px solid;
+}
+
+.splunk-message-success {
+  background-color: rgba(0, 168, 107, 0.1);
+  border-left-color: var(--splunk-enterprise-success);
+  color: var(--splunk-enterprise-success);
+}
+
+.splunk-message-error {
+  background-color: rgba(217, 63, 63, 0.1);
+  border-left-color: var(--splunk-enterprise-error);
+  color: var(--splunk-enterprise-error);
+}
+
+.splunk-message-warning {
+  background-color: rgba(255, 140, 0, 0.1);
+  border-left-color: var(--splunk-enterprise-warning);
+  color: var(--splunk-enterprise-warning);
+}
+
+.splunk-message-info {
+  background-color: rgba(0, 112, 243, 0.1);
+  border-left-color: var(--splunk-enterprise-primary);
+  color: var(--splunk-enterprise-primary);
+}
+
+/* Typography */
+.splunk-heading {
+  margin: 0 0 16px 0;
+  color: var(--splunk-enterprise-text-primary);
+  font-weight: 600;
+}
+
+.splunk-heading-1 {
+  font-size: 32px;
+}
+
+.splunk-heading-2 {
+  font-size: 24px;
+}
+
+.splunk-heading-3 {
+  font-size: 20px;
+}
+
+.splunk-paragraph {
+  margin: 0 0 16px 0;
+  color: var(--splunk-enterprise-text-secondary);
+  line-height: 1.5;
+}
+
+/* Tabs */
+.splunk-tab-layout {
+  background-color: var(--splunk-enterprise-bg-primary);
+}
+
+.splunk-tab-nav {
+  display: flex;
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+  background-color: var(--splunk-enterprise-bg-secondary);
+}
+
+.splunk-tab-button {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  color: var(--splunk-enterprise-text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.splunk-tab-button:hover {
+  color: var(--splunk-enterprise-text-primary);
+  background-color: var(--splunk-enterprise-bg-tertiary);
+}
+
+.splunk-tab-button.active {
+  color: var(--splunk-enterprise-primary);
+  border-bottom-color: var(--splunk-enterprise-primary);
+}
+
+.splunk-tab-content {
+  padding: 24px;
+}
+
+.splunk-tab-panel {
+  display: none;
+}
+
+.splunk-tab-panel.active {
+  display: block;
+}
+
+/* Modal */
+.splunk-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.splunk-modal-content {
+  background-color: var(--splunk-enterprise-bg-primary);
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.splunk-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--splunk-enterprise-border);
+}
+
+.splunk-modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--splunk-enterprise-text-primary);
+}
+
+.splunk-modal-body {
+  padding: 24px;
+}
+
+.splunk-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--splunk-enterprise-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Popover */
+.splunk-popover {
+  position: relative;
+  display: inline-block;
+}
+
+.splunk-popover-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--splunk-enterprise-bg-primary);
+  border: 1px solid var(--splunk-enterprise-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1500;
+  min-width: 200px;
+  margin-top: 4px;
+}
+
+/* Wait Spinner */
+.splunk-wait-spinner {
+  border: 2px solid var(--splunk-enterprise-border);
+  border-top: 2px solid var(--splunk-enterprise-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+.splunk-wait-spinner-small {
+  width: 16px;
+  height: 16px;
+}
+
+.splunk-wait-spinner-medium {
+  width: 24px;
+  height: 24px;
+}
+
+.splunk-wait-spinner-large {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Main Content */
+.splunk-main-content {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .splunk-app-bar-content {
+    padding: 0 16px;
+  }
+
+  .splunk-app-bar-left {
+    gap: 16px;
+  }
+
+  .splunk-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--splunk-enterprise-bg-secondary);
+    border-top: 1px solid var(--splunk-enterprise-border);
+    padding: 8px;
+  }
+
+  .splunk-tab-nav {
+    flex-wrap: wrap;
+  }
+
+  .splunk-modal-content {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+}
+
+/* Utility Classes */
+.splunk-text-center {
+  text-align: center;
+}
+
+.splunk-mb-16 {
+  margin-bottom: 16px;
+}
+
+.splunk-mb-24 {
+  margin-bottom: 24px;
+}
+
+.splunk-p-24 {
+  padding: 24px;
+}
+
+.splunk-flex {
+  display: flex;
+}
+
+.splunk-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splunk-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.splunk-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .splunk-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
